@@ -30,8 +30,18 @@ public class MyLinkedList{
     }
 
 
-    public Object get(int index) {
-    }
+    public int get(int index) throws IndexOutOfBoundsException {
+        if (index >= this.listSize || index < 0) {
+            throw new IndexOutOfBoundsException("Supplied index is invalid.");
+        }
+
+        Node currNode = this.listHead;
+        for (int i = 0; i < index; ++i) {
+            currNode = currNode.getNodeNext();
+        }
+
+        return currNode.getNodeValue();
+    } // end of get()
 
 
     public void add(int index, int newValue) throws IndexOutOfBoundsException {
@@ -62,9 +72,48 @@ public class MyLinkedList{
     }
 
 
-    public int remove(int index) {
+    public boolean remove(int value) {
 
+        if(this.listSize == 0) {
+            return false;
+        }
 
+        Node currentNode = this.listHead;
+        Node previousNode = null;
+
+        if(currentNode.getNodeValue() == value){
+            this.listHead = currentNode.getNodeNext();
+            this.listSize--;
+            return true;
+        }
+
+        previousNode = currentNode;
+        currentNode = currentNode.getNodeNext();
+
+        while(currentNode != null){
+
+            if(currentNode.getNodeValue() == value){
+                previousNode.setNext(currentNode.getNodeNext());
+                currentNode = null;
+                this.listSize--;
+                return true;
+            }
+
+            previousNode = currentNode;
+            currentNode = currentNode.getNodeNext();
+        }
+
+        return false;
+    }
+
+    public boolean search(int val){
+        Node currentNode = this.listHead;
+        for(int i = 0; i < this.listSize; ++i){
+            if(currentNode.getNodeValue() == val){
+                return true;
+            }
+        }
+        return false;
     }
 
     private class Node{

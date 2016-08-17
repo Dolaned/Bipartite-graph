@@ -11,19 +11,46 @@ import java.util.*;
 public class AdjList <T extends Object> implements FriendshipGraph<T>
 {
     public MyLinkedList[] aList;
+    public HashMap<String, Integer> keyValues;
+    public int adjListSize;
 
     /**
 	 * Contructs empty graph.
 	 */
     public AdjList() {
+        adjListSize = 0;
+        keyValues = new HashMap<>();
     	// Implement me!
     } // end of AdjList()
     
     
     public void addVertex(T vertLabel) {
-        //something list this
-        MyLinkedList list = new MyLinkedList();
-        aList[0] = list;
+
+        /*Convert T Object to String*/
+        String label = vertLabel.toString();
+
+        if(aList == null){
+            aList = new MyLinkedList[1];
+            keyValues.put(label,0);
+        }else{
+
+            MyLinkedList[] temp = new MyLinkedList[adjListSize];
+
+            for(int i = 0; i < adjListSize; i++){
+                temp[i] = aList[i];
+            }
+
+            aList = new MyLinkedList[adjListSize+1];
+
+            for(int i = 0; i < adjListSize; i++){
+                aList[i] =  temp[i];
+            }
+
+            keyValues.put(label, adjListSize+1);
+            aList[adjListSize+1] = new MyLinkedList();
+        }
+
+        adjListSize++;
         // Implement me!
     } // end of addVertex()
 	
@@ -43,6 +70,22 @@ public class AdjList <T extends Object> implements FriendshipGraph<T>
     
     
     public void removeVertex(T vertLabel) {
+        String label = vertLabel.toString();
+
+        MyLinkedList[] temp = new MyLinkedList[adjListSize-1];
+
+        for(int i = 0; i < adjListSize; i++){
+            if(i != keyValues.get(label)){
+                temp[i] = aList[i];
+            }
+        }
+        aList = new MyLinkedList[adjListSize-1];
+
+        for(int i = 0; i < adjListSize-1; i++){
+            aList[i] = temp[i];
+        }
+        adjListSize--;
+
         // Implement me!
     } // end of removeVertex()
 	

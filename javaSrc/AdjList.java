@@ -1,3 +1,5 @@
+import com.sun.tools.internal.jxc.apt.Const;
+
 import java.io.*;
 import java.util.*;
 
@@ -55,8 +57,18 @@ public class AdjList <T extends Object> implements FriendshipGraph<T>
     } // end of addVertex()
 	
     
-    public void addEdge(T srcLabel, T tarLabel) {
-        // Implement me!
+    public void addEdge(T srcLabel, T tarLabel) throws IndexOutOfBoundsException {
+
+        if(keyValues.get(srcLabel.toString()) == null || keyValues.get(tarLabel.toString()) == null){
+            throw new IndexOutOfBoundsException("Index not found");
+        }
+
+        int vertSrcEdge = keyValues.get(srcLabel.toString());
+        int vertTarEdge = keyValues.get(tarLabel.toString());
+
+        this.aList[vertSrcEdge].add(vertTarEdge);
+        this.aList[vertTarEdge].add(vertSrcEdge);
+
     } // end of addEdge()
 	
 
@@ -85,13 +97,25 @@ public class AdjList <T extends Object> implements FriendshipGraph<T>
             aList[i] = temp[i];
         }
         adjListSize--;
+        keyValues.remove(label);
 
         // Implement me!
     } // end of removeVertex()
 	
     
     public void removeEdge(T srcLabel, T tarLabel) {
-        // Implement me!
+
+
+        if(keyValues.get(srcLabel.toString()) == null || keyValues.get(tarLabel.toString()) == null){
+            throw new IndexOutOfBoundsException("Index not found");
+        }
+
+        int vertSrcEdge = keyValues.get(srcLabel.toString());
+        int vertTarEdge = keyValues.get(tarLabel.toString());
+
+        this.aList[vertSrcEdge].remove(vertTarEdge);
+        this.aList[vertTarEdge].remove(vertSrcEdge);
+
     } // end of removeEdges()
 	
     

@@ -8,5 +8,7 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="library" name="jopt-simple-5.0.2" level="project" />
+    <orderEntry type="library" name="sample" level="project" />
   </component>
 </module>

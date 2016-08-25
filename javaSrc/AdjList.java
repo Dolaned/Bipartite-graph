@@ -2,12 +2,13 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Queue;
 
 /**
  * Adjacency list implementation for the FriendshipGraph interface.
  * <p>
  * Your task is to complete the implementation of this class.  You may add methods, but ensure your modified class compiles and runs.
- *
+ * TODO: implement shortest path (BFS)
  * @author Jeffrey Chan, 2016.
  */
 public class AdjList<T extends Object> implements FriendshipGraph<T> {
@@ -21,139 +22,155 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
     public AdjList() {
         adjListSize = 0;
         keyValues = new HashMap<>();
-        // Implement me!
+        aList = new MyLinkedList[1];
     } // end of AdjList()
 
 
-    public void addVertex(T vertLabel) {
+    public void addVertex(T vertLabel){
 
-        if (aList == null) {
-            aList = new MyLinkedList[1];
-            aList[0] = new MyLinkedList();
-            keyValues.put(vertLabel, 0);
-        } else {
+        if(keyValues.get(vertLabel) != null){
+            System.out.println("Vertex Exists");
+        }else{
+            if(adjListSize == 0){
+                aList[0] = new MyLinkedList();
+                keyValues.put(vertLabel, adjListSize);
+            }else{
+                MyLinkedList[] temp = new MyLinkedList[adjListSize];
 
-            MyLinkedList[] temp = new MyLinkedList[adjListSize];
+                for (int i = 0; i < adjListSize; i++) {
+                    temp[i] = aList[i];
+                }
 
-            for (int i = 0; i < adjListSize; i++) {
-                temp[i] = aList[i];
+                aList = new MyLinkedList[adjListSize + 1];
+
+                for (int i = 0; i < adjListSize; i++) {
+                    aList[i] = temp[i];
+                }
+
+                keyValues.put(vertLabel, adjListSize);
+                //access as current size because array indexes start at 0
+                aList[adjListSize] = new MyLinkedList();
             }
-
-            aList = new MyLinkedList[adjListSize + 1];
-
-            for (int i = 0; i < adjListSize; i++) {
-                aList[i] = temp[i];
-            }
-
-            keyValues.put(vertLabel, adjListSize + 1);
-            aList[adjListSize + 1] = new MyLinkedList();
+            adjListSize++;
         }
-
-        adjListSize++;
     } // end of addVertex()
 
 
-    public void addEdge(T srcLabel, T tarLabel) throws IndexOutOfBoundsException {
+    public void addEdge(T srcLabel, T tarLabel) {
 
         if (keyValues.get(srcLabel) == null || keyValues.get(tarLabel) == null) {
-            throw new IndexOutOfBoundsException("Index not found");
+            System.out.println("Index Not Found");
+        }else{
+
+            int vertSrcEdge = keyValues.get(srcLabel);
+            int vertTarEdge = keyValues.get(tarLabel);
+
+            aList[vertSrcEdge].add(vertTarEdge);
+            aList[vertTarEdge].add(vertSrcEdge);
         }
 
-        int vertSrcEdge = keyValues.get(srcLabel);
-        int vertTarEdge = keyValues.get(tarLabel);
-
-        this.aList[vertSrcEdge].add(vertTarEdge);
-        this.aList[vertTarEdge].add(vertSrcEdge);
 
     } // end of addEdge()
 
-    public ArrayList<T> neighbours(T vertLabel) throws IndexOutOfBoundsException {
-
+    public ArrayList<T> neighbours(T vertLabel)  {
         ArrayList<T> neighbours = new ArrayList<T>();
 
         if (keyValues.get(vertLabel) == null) {
-            throw new IndexOutOfBoundsException("vertex not found");
-        }
+            System.out.println("vertex not found");
+        }else{
+            int vertexForNeighbours = keyValues.get(vertLabel);
+            System.out.println("neighbour Label: "+vertLabel.toString() +" vertex value:  " + vertexForNeighbours );
 
-        int vertexForNeighbours = keyValues.get(vertLabel);
-
-        for (Map.Entry<T, Integer> entry : keyValues.entrySet()) {
-            int value = entry.getValue();
-
-            if (aList[vertexForNeighbours].search(value)) {
-                neighbours.add(entry.getKey());
+            for(int i = 0; i < aList[vertexForNeighbours].listSize; i++){
+                for(Map.Entry<T, Integer> entry : keyValues.entrySet()){
+                    if (aList[vertexForNeighbours].get(i) == entry.getValue() && vertLabel != entry.getKey()) {
+                        neighbours.add(entry.getKey());
+                    }
+                }
             }
         }
-
         return neighbours;
     } // end of neighbours()
 
 
     public void removeVertex(T vertLabel) {
-        int arrayVal = keyValues.get(vertLabel);
-        ArrayList<T> neighbours = neighbours(vertLabel);
 
-        //remove edges
-        if (aList[arrayVal].listSize > 0) {
-            for (T neighbour : neighbours) removeEdge(vertLabel, neighbour);
-        }
+        if(keyValues.get(vertLabel) == null){
+            System.out.println("Vertex Not Found");
+        }else{
+            int arrayVal = keyValues.get(vertLabel);
+            ArrayList<T> neighbours = neighbours(vertLabel);
 
-        //create temp array and copy
-        MyLinkedList[] temp = new MyLinkedList[adjListSize - 1];
-
-        for (int i = 0; i < adjListSize; i++) {
-            if (i != arrayVal) {
-                temp[i] = aList[i];
+            //remove edges
+            if (aList[arrayVal].listSize > 0) {
+                System.out.println(neighbours.toString());
+                for (T neighbour : neighbours) removeEdge(vertLabel, neighbour);
             }
-        }
-        //readjust list and copy back
-        aList = new MyLinkedList[adjListSize - 1];
 
+            //create temp array and copy
+            MyLinkedList[] temp = new MyLinkedList[adjListSize - 1];
 
-        System.arraycopy(temp, 0, aList, 0, adjListSize - 1);
-        //decrement list size and update hashmap
+            for (int i = 0; i < adjListSize-1; i++) {
 
-        for (Map.Entry<T, Integer> entry : keyValues.entrySet()) {
-            if(entry.getValue() > arrayVal){
-                keyValues.put(entry.getKey(),entry.getValue()-1);
+                if(i >= arrayVal){
+                    temp[i] = aList[i+1];
+                }else{
+                    temp[i] = aList[i];
+                }
             }
+            //readjust list and copy back
+            aList = new MyLinkedList[adjListSize - 1];
+
+
+            System.arraycopy(temp, 0, aList, 0, adjListSize - 1);
+            //decrement list size and update hashmap
+
+            for (Map.Entry<T, Integer> entry : keyValues.entrySet()) {
+                if(entry.getValue() > arrayVal){
+                    keyValues.put(entry.getKey(),entry.getValue()-1);
+                }
+            }
+            adjListSize--;
+            keyValues.remove(vertLabel);
         }
-        adjListSize--;
-        keyValues.remove(vertLabel);
+
 
     } // end of removeVertex()
 
 
     public void removeEdge(T srcLabel, T tarLabel) {
 
-
         if (keyValues.get(srcLabel) == null || keyValues.get(tarLabel) == null) {
-            throw new IndexOutOfBoundsException("Index not found");
+            System.out.println("1 or more vertexes not found");
+        }else{
+            int vertSrcEdge = keyValues.get(srcLabel);
+            int vertTarEdge = keyValues.get(tarLabel);
+
+            aList[vertSrcEdge].remove(vertTarEdge);
+            aList[vertTarEdge].remove(vertSrcEdge);
         }
-
-        int vertSrcEdge = keyValues.get(srcLabel);
-        int vertTarEdge = keyValues.get(tarLabel);
-
-        this.aList[vertSrcEdge].remove(vertTarEdge);
-        this.aList[vertTarEdge].remove(vertSrcEdge);
-
     } // end of removeEdges()
 
 
     public void printVertices(PrintWriter os) {
 
-        for (Map.Entry<T, Integer> entry : keyValues.entrySet()) {
-            os.print(entry.getKey() + " ");
+        for(T key: keyValues.keySet()){
+            os.append(key.toString() + " ");
         }
+        os.append("\n");
+        os.flush();
     } // end of printVertices()
 
 
     public void printEdges(PrintWriter os) {
-
-        for(Map.Entry<T, Integer> entry: keyValues.entrySet()){
-
+        for(T key: keyValues.keySet()){
+            ArrayList<T> n = neighbours(key);
+            for(T oj : n){
+                os.append(key.toString() + " " );
+                os.append(oj.toString() + "\n");
+            }
         }
-        // Implement me!
+        os.flush();
     } // end of printEdges()
 
 

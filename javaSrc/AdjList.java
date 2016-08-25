@@ -65,11 +65,13 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
             int vertSrcEdge = keyValues.get(srcLabel);
             int vertTarEdge = keyValues.get(tarLabel);
 
-            aList[vertSrcEdge].add(vertTarEdge);
-            aList[vertTarEdge].add(vertSrcEdge);
+            if(!(aList[vertSrcEdge].search(vertTarEdge) && aList[vertTarEdge].search(vertSrcEdge))){
+                aList[vertSrcEdge].add(vertTarEdge);
+                aList[vertTarEdge].add(vertSrcEdge);
+            }else {
+                System.out.println("Edge already Exists");
+            }
         }
-
-
     } // end of addEdge()
 
     public ArrayList<T> neighbours(T vertLabel)  {
@@ -79,7 +81,7 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
             System.out.println("vertex not found");
         }else{
             int vertexForNeighbours = keyValues.get(vertLabel);
-            System.out.println("neighbour Label: "+vertLabel.toString() +" vertex value:  " + vertexForNeighbours );
+            //System.out.println("neighbour Label: "+vertLabel.toString() +" vertex value:  " + vertexForNeighbours );
 
             for(int i = 0; i < aList[vertexForNeighbours].listSize; i++){
                 for(Map.Entry<T, Integer> entry : keyValues.entrySet()){

@@ -1,8 +1,5 @@
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Adjacency list implementation for the FriendshipGraph interface.
@@ -177,10 +174,37 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
 
     public int shortestPathDistance(T vertLabel1, T vertLabel2) {
-        // Implement me!
 
+        Queue<T> q = new LinkedList<>();
+        Queue<T> shortestQueue = new LinkedList<>();
+        HashMap<T, Boolean> visited = new HashMap<>();
+
+        for(Map.Entry<T, Integer> entry: keyValues.entrySet()){
+            visited.put(entry.getKey(),false);
+        }
+
+        //add source node to queue and set its visited state to false.
+        q.add(vertLabel1);
+        visited.put(vertLabel1, true);//set current nodes visited state to true;
+
+        while (!q.isEmpty()) {
+            T current = q.remove();// remove the head of queue
+            shortestQueue.add(current);
+            if(current.toString().equals(vertLabel2)){
+                return shortestQueue.size();
+            }
+
+            visited.put(current,true);
+
+            for(T node : neighbours(current)){
+                if(node!=null && !visited.get(node)) {
+                    q.add(node);
+                }
+            }
+        }
         // if we reach this point, source and target are disconnected
         return disconnectedDist;
     } // end of shortestPathDistance()
+
 
 } // end of class AdjList

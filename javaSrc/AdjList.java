@@ -6,6 +6,7 @@ import java.util.*;
  * <p>
  * Your task is to complete the implementation of this class.  You may add methods, but ensure your modified class compiles and runs.
  * TODO: implement shortest path (BFS)
+ *
  * @author Jeffrey Chan, 2016.
  */
 public class AdjList<T extends Object> implements FriendshipGraph<T> {
@@ -23,15 +24,15 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
     } // end of AdjList()
 
 
-    public void addVertex(T vertLabel){
+    public void addVertex(T vertLabel) {
 
-        if(keyValues.get(vertLabel) != null){
+        if (keyValues.get(vertLabel) != null) {
             System.out.println("Vertex Exists");
-        }else{
-            if(adjListSize == 0){
+        } else {
+            if (adjListSize == 0) {
                 aList[0] = new MyLinkedList();
                 keyValues.put(vertLabel, adjListSize);
-            }else{
+            } else {
                 MyLinkedList[] temp = new MyLinkedList[adjListSize];
 
                 for (int i = 0; i < adjListSize; i++) {
@@ -57,31 +58,31 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
         if (keyValues.get(srcLabel) == null || keyValues.get(tarLabel) == null) {
             System.out.println("Index Not Found");
-        }else{
+        } else {
 
             int vertSrcEdge = keyValues.get(srcLabel);
             int vertTarEdge = keyValues.get(tarLabel);
 
-            if(!(aList[vertSrcEdge].search(vertTarEdge) && aList[vertTarEdge].search(vertSrcEdge))){
+            if (!(aList[vertSrcEdge].search(vertTarEdge) && aList[vertTarEdge].search(vertSrcEdge))) {
                 aList[vertSrcEdge].add(vertTarEdge);
                 aList[vertTarEdge].add(vertSrcEdge);
-            }else {
+            } else {
                 System.out.println("Edge already Exists");
             }
         }
     } // end of addEdge()
 
-    public ArrayList<T> neighbours(T vertLabel)  {
+    public ArrayList<T> neighbours(T vertLabel) {
         ArrayList<T> neighbours = new ArrayList<T>();
 
         if (keyValues.get(vertLabel) == null) {
             System.out.println("vertex not found");
-        }else{
+        } else {
             int vertexForNeighbours = keyValues.get(vertLabel);
             //System.out.println("neighbour Label: "+vertLabel.toString() +" vertex value:  " + vertexForNeighbours );
 
-            for(int i = 0; i < aList[vertexForNeighbours].listSize; i++){
-                for(Map.Entry<T, Integer> entry : keyValues.entrySet()){
+            for (int i = 0; i < aList[vertexForNeighbours].listSize; i++) {
+                for (Map.Entry<T, Integer> entry : keyValues.entrySet()) {
                     if (aList[vertexForNeighbours].get(i) == entry.getValue() && vertLabel != entry.getKey()) {
                         neighbours.add(entry.getKey());
                     }
@@ -94,9 +95,9 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
     public void removeVertex(T vertLabel) {
 
-        if(keyValues.get(vertLabel) == null){
+        if (keyValues.get(vertLabel) == null) {
             System.out.println("Vertex Not Found");
-        }else{
+        } else {
             int arrayVal = keyValues.get(vertLabel);
             ArrayList<T> neighbours = neighbours(vertLabel);
 
@@ -109,11 +110,11 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
             //create temp array and copy
             MyLinkedList[] temp = new MyLinkedList[adjListSize - 1];
 
-            for (int i = 0; i < adjListSize-1; i++) {
+            for (int i = 0; i < adjListSize - 1; i++) {
 
-                if(i >= arrayVal){
-                    temp[i] = aList[i+1];
-                }else{
+                if (i >= arrayVal) {
+                    temp[i] = aList[i + 1];
+                } else {
                     temp[i] = aList[i];
                 }
             }
@@ -125,8 +126,8 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
             //decrement list size and update hashmap
 
             for (Map.Entry<T, Integer> entry : keyValues.entrySet()) {
-                if(entry.getValue() > arrayVal){
-                    keyValues.put(entry.getKey(),entry.getValue()-1);
+                if (entry.getValue() > arrayVal) {
+                    keyValues.put(entry.getKey(), entry.getValue() - 1);
                 }
             }
             adjListSize--;
@@ -141,7 +142,7 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
         if (keyValues.get(srcLabel) == null || keyValues.get(tarLabel) == null) {
             System.out.println("1 or more vertexes not found");
-        }else{
+        } else {
             int vertSrcEdge = keyValues.get(srcLabel);
             int vertTarEdge = keyValues.get(tarLabel);
 
@@ -153,7 +154,7 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
     public void printVertices(PrintWriter os) {
 
-        for(T key: keyValues.keySet()){
+        for (T key : keyValues.keySet()) {
             os.append(key.toString() + " ");
         }
         os.append("\n");
@@ -162,10 +163,10 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
 
     public void printEdges(PrintWriter os) {
-        for(T key: keyValues.keySet()){
+        for (T key : keyValues.keySet()) {
             ArrayList<T> n = neighbours(key);
-            for(T oj : n){
-                os.append(key.toString() + " " );
+            for (T oj : n) {
+                os.append(key.toString() + " ");
                 os.append(oj.toString() + "\n");
             }
         }
@@ -179,8 +180,8 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
         Queue<T> shortestQueue = new LinkedList<>();
         HashMap<T, Boolean> visited = new HashMap<>();
 
-        for(Map.Entry<T, Integer> entry: keyValues.entrySet()){
-            visited.put(entry.getKey(),false);
+        for (Map.Entry<T, Integer> entry : keyValues.entrySet()) {
+            visited.put(entry.getKey(), false);
         }
 
         //add source node to queue and set its visited state to false.
@@ -190,14 +191,14 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
         while (!q.isEmpty()) {
             T current = q.remove();// remove the head of queue
             shortestQueue.add(current);
-            if(current.toString().equals(vertLabel2)){
+            if (current.toString().equals(vertLabel2)) {
                 return shortestQueue.size();
             }
 
-            visited.put(current,true);
+            visited.put(current, true);
 
-            for(T node : neighbours(current)){
-                if(node!=null && !visited.get(node)) {
+            for (T node : neighbours(current)) {
+                if (node != null && !visited.get(node)) {
                     q.add(node);
                 }
             }

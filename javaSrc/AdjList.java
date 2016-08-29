@@ -1,4 +1,5 @@
 import java.io.PrintWriter;
+import java.security.KeyPair;
 import java.util.*;
 
 /**
@@ -103,14 +104,16 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
             //remove edges
             if (aList[arrayVal].listSize > 0) {
-                System.out.println(neighbours.toString());
-                for (T neighbour : neighbours) removeEdge(vertLabel, neighbour);
+                //System.out.println(neighbours.toString());
+                for (T neighbour : neighbours){
+                    removeEdge(vertLabel, neighbour);
+                }
             }
 
             //create temp array and copy
             MyLinkedList[] temp = new MyLinkedList[adjListSize - 1];
 
-            for (int i = 0; i < adjListSize - 1; i++) {
+            for (int i = 0; i < adjListSize-1; i++) {
 
                 if (i >= arrayVal) {
                     temp[i] = aList[i + 1];
@@ -127,6 +130,13 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
             for (Map.Entry<T, Integer> entry : keyValues.entrySet()) {
                 if (entry.getValue() > arrayVal) {
+                    for(int i = 0; i < adjListSize-1; i ++){
+                        if(aList[i].search(entry.getValue())){
+                            aList[i].remove(entry.getValue());
+                            aList[i].add(entry.getValue() - 1);
+                        }
+                    }
+                    //System.out.println(entry.getKey().toString() + "    "+entry.getValue());
                     keyValues.put(entry.getKey(), entry.getValue() - 1);
                 }
             }
@@ -154,7 +164,9 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
     public void printVertices(PrintWriter os) {
 
-        for (T key : keyValues.keySet()) {
+        List<String> sortedKeys=new ArrayList(keyValues.keySet());
+        Collections.sort(sortedKeys);
+        for (String key : sortedKeys) {
             os.append(key.toString() + " ");
         }
         os.append("\n");
@@ -166,8 +178,9 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
         for (T key : keyValues.keySet()) {
             ArrayList<T> n = neighbours(key);
             for (T oj : n) {
-                os.append(key.toString() + " ");
-                os.append(oj.toString() + "\n");
+                os.append(oj.toString() + " ");
+                os.append(key.toString() + "\n");
+
             }
         }
         os.flush();
@@ -176,30 +189,27 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
     public int shortestPathDistance(T vertLabel1, T vertLabel2) {
 
-        Queue<T> q = new LinkedList<>();
-        Queue<T> shortestQueue = new LinkedList<>();
+        ArrayDeque<KeyEntry> q = new ArrayDeque<>();
         HashMap<T, Boolean> visited = new HashMap<>();
 
-        for (Map.Entry<T, Integer> entry : keyValues.entrySet()) {
-            visited.put(entry.getKey(), false);
-        }
-
-        //add source node to queue and set its visited state to false.
-        q.add(vertLabel1);
+        q.add(new KeyEntry(vertLabel1, 0));
         visited.put(vertLabel1, true);//set current nodes visited state to true;
 
         while (!q.isEmpty()) {
-            T current = q.remove();// remove the head of queue
-            shortestQueue.add(current);
-            if (current.toString().equals(vertLabel2)) {
-                return shortestQueue.size();
-            }
+            //remove keyentry from queue
+            KeyEntry entry  = q.remove(); // remove the head of queue
 
-            visited.put(current, true);
+            //assign current to the entries vertex
+            T current = entry.getVertex();
 
-            for (T node : neighbours(current)) {
-                if (node != null && !visited.get(node)) {
-                    q.add(node);
+            if (current.equals(vertLabel2)) {
+                return entry.getDistance();
+            }else{
+                for (T node : neighbours(current)) {
+                    if (!visited.containsKey(node)) {
+                        q.add(new KeyEntry(node, entry.getDistance() +1));
+                        visited.put(current, true);
+                    }
                 }
             }
         }
@@ -207,5 +217,20 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
         return disconnectedDist;
     } // end of shortestPathDistance()
 
+class KeyEntry{
+    private T vertex;
+    private int distance;
 
+    KeyEntry(T t, int i){
+        this.vertex = t;
+        this.distance = i;
+    }
+
+     T getVertex(){
+        return this.vertex;
+    }
+     int getDistance(){
+        return this.distance;
+    }
+}
 } // end of class AdjList

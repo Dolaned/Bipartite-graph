@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0bd9865-b082-4849-8d20-92930c9afca6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaSrc/AdjList.java" afterPath="$PROJECT_DIR$/javaSrc/AdjList.java" />
     </list>
     <ignored path="AAassignment1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdjList.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdjList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/javaSrc/AdjList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="212" column="7" selection-start-line="212" selection-start-column="7" selection-end-line="212" selection-end-column="7" />
+            <state relative-caret-position="570">
+              <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,24 +40,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testing/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+            <state relative-caret-position="-45">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test2-adjlist.dist.out" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/test2-adjlist.dist.out">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -735,7 +723,7 @@
       <workItem from="1471235403495" duration="21964000" />
       <workItem from="1472000024021" duration="43556000" />
       <workItem from="1472281252918" duration="579000" />
-      <workItem from="1472383684845" duration="31903000" />
+      <workItem from="1472383684845" duration="33669000" />
     </task>
     <task id="LOCAL-00001" summary="almost finished">
       <created>1472025778974</created>
@@ -786,14 +774,21 @@
       <option name="project" value="LOCAL" />
       <updated>1472616026835</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="tester pushed">
+      <created>1472620288500</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1472620288500</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99546000" />
+    <option name="totallyTimeSpent" value="101312000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1279" height="737" extended-state="0" />
+    <frame x="1" y="23" width="1279" height="737" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -840,7 +835,8 @@
     <MESSAGE value="Only have shortest path to implement" />
     <MESSAGE value="Implementation complete, just need to test with large data sets" />
     <MESSAGE value="Adjlist complete and passes jeffreys tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjlist complete and passes jeffreys tests" />
+    <MESSAGE value="tester pushed" />
+    <option name="LAST_COMMIT_MESSAGE" value="tester pushed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1123,20 +1119,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javaSrc/AdjList.java">
+    <entry file="file://$PROJECT_DIR$/testing/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="212" column="7" selection-start-line="212" selection-start-column="7" selection-end-line="212" selection-end-column="7" />
+        <state relative-caret-position="-45">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing/Main.java">
+    <entry file="file://$PROJECT_DIR$/javaSrc/AdjList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        <state relative-caret-position="570">
+          <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

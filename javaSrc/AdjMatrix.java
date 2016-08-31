@@ -2,6 +2,7 @@ import java.io.PrintWriter;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -22,6 +23,8 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
 	private int numOfV;
     //rate by which the edge array grows.
 	private int volume;
+	
+	public PrintWriter writer;
     /**
 	 * Contructs empty graph.
 	 */
@@ -31,12 +34,18 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
         volume = 10;
         edges = new int[volume][volume];
         numOfV = 0;
+        try{
+        	writer = new PrintWriter("results.out","UTF-8");
+        }catch(Exception e){
+        	e.printStackTrace();
+        }
     	// Implement me! Done!
     } // end of AdjMatrix()
     
     
     public void addVertex(T vertLabel) {
-        //better solution using volume size to grow only as needed, rather than everytime
+        
+    	//better solution using volume size to grow only as needed, rather than everytime
         
         
         //key = vertice / value = position in array
@@ -47,6 +56,9 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
     		//System.out.println("vertice already exsists");
         	return;
         }
+    	
+        long startTime = System.nanoTime();
+
     	
     	vertices.put(vertLabel, numOfV);
         numOfV++;
@@ -59,6 +71,7 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
         {
         	//gone for simple brute force solution to intialise array
         	//copy old array into tempary one
+        	int[][] temp = edges;/*
         	int[][] temp = new int[edges.length][edges.length];
         	
         	for(int i = 0; i < edges.length;i++)
@@ -67,7 +80,7 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
         		{
         			temp[i][j] = edges[i][j]; 
         		}
-        	}
+        	}*/
         	//growth factor
         	volume = volume * 2;
         	//create new array
@@ -81,10 +94,16 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
         		}
         	}
         }
+        long endTime = System.nanoTime();
+        long durationInMs = TimeUnit.MILLISECONDS.convert((endTime - startTime), TimeUnit.NANOSECONDS);
+        writer.println("Add vertex takes: " + (endTime - startTime) + "ns");
+        System.out.println("Add vertex takes: " + (endTime - startTime) + "ns");
+        
     } // end of addVertex()
 	
     
     public void addEdge(T srcLabel, T tarLabel) throws IllegalArgumentException {
+
     	//check if both vertices exist within graph
     
     	if(vertices.get(srcLabel) == null || vertices.get(tarLabel) == null)
@@ -92,6 +111,9 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
     		throw new IllegalArgumentException("one or both of incident vertices"
     				+ " does not exist");
     	}
+    	
+        long startTime = System.nanoTime();
+
     	
     	//else get value for each vertice to add edge
     	Integer x = vertices.get(srcLabel);
@@ -102,7 +124,9 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
     	edges[x][y] = 1;
     	edges[y][x] = 1;
     	// Implement me!
-        
+        long endTime = System.nanoTime();
+       // long durationInMs = TimeUnit.MILLISECONDS.convert((endTime - startTime), TimeUnit.NANOSECONDS);
+        writer.println("Add edge takes: " + (endTime - startTime) + "ns");
     } // end of addEdge()
 	
 
@@ -135,6 +159,7 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
     
     
     public void removeVertex(T vertLabel) throws IllegalArgumentException{
+
     	//more elegant solution
     	//make use of size and volume (size = current elements, 
     	//								volume ratio it grows by)
@@ -150,6 +175,8 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
     	{
     		throw new IllegalArgumentException("Vertex does not exist");
     	}
+
+    	long startTime = System.nanoTime();
 
     	//get last V in Map for swapping
     	T tempVert  = getKeyFromValue(numOfV - 1);
@@ -189,16 +216,24 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
     	
     	//decrement number of vertices
     	numOfV--;
+    	
+        long endTime = System.nanoTime();
+        
+        writer.println("remove vertice takes: " + (endTime - startTime) + "ns");
         
     } // end of removeVertex()
 	
     
     public void removeEdge(T srcLabel, T tarLabel) throws IllegalArgumentException {
-        
+
+    	
+    	
     	if(vertices.get(srcLabel) == null || vertices.get(tarLabel) == null)
         {
         	throw new IllegalArgumentException("One or both dont exist");
         }
+        long startTime = System.nanoTime();
+
     	
     	//get location of V in array
     	Integer x = (int)vertices.get(srcLabel);
@@ -210,6 +245,10 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
         edges[x][y] = 0;
         edges[y][x] = 0;
         
+        
+        long endTime = System.nanoTime();
+        
+        writer.println("remove edge takes: " + (endTime - startTime) + "ns");
         // Implement me!
     } // end of removeEdges()
 	
@@ -272,6 +311,9 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
         	throw new IllegalArgumentException("One or both dont exist");
         }
         
+        long startTime = System.nanoTime();
+
+        
         //create array of visted nodes
     	boolean[] marked = new boolean[numOfV];
     	for(int i =0;i<numOfV; i++)
@@ -314,6 +356,10 @@ public class AdjMatrix <T extends Object> implements FriendshipGraph<T>
     			}
     		}
     	}
+    	
+    	long endTime = System.nanoTime();
+        
+        writer.println("shortest distance takes: " + (endTime - startTime) + "ns");
     	
     	// if we reach this point, source and target are disconnected
         return disconnectedDist;    	

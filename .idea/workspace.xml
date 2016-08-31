@@ -2,23 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0bd9865-b082-4849-8d20-92930c9afca6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/assign1TestScript.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/facebook_combined.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test1.dist.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test1.edge.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test1.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test1.neigh.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test1.vert.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test2.dist.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test2.edge.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test2.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test2.neigh.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test2.vert.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test3.dist.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test3.edge.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test3.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test3.neigh.exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing 3/tests/test3.vert.exp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing/test3LoadedGraph.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testing/tests/test4.in" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/assign1TestScript.py" afterPath="$PROJECT_DIR$/testing/assign1TestScript.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/facebook_combined.txt" afterPath="$PROJECT_DIR$/testing/facebook_combined.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test1.dist.exp" afterPath="$PROJECT_DIR$/testing/tests/test1.dist.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test1.edge.exp" afterPath="$PROJECT_DIR$/testing/tests/test1.edge.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test1.in" afterPath="$PROJECT_DIR$/testing/tests/test1.in" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test1.neigh.exp" afterPath="$PROJECT_DIR$/testing/tests/test1.neigh.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test1.vert.exp" afterPath="$PROJECT_DIR$/testing/tests/test1.vert.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test2.dist.exp" afterPath="$PROJECT_DIR$/testing/tests/test2.dist.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test2.edge.exp" afterPath="$PROJECT_DIR$/testing/tests/test2.edge.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test2.in" afterPath="$PROJECT_DIR$/testing/tests/test2.in" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test2.neigh.exp" afterPath="$PROJECT_DIR$/testing/tests/test2.neigh.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test2.vert.exp" afterPath="$PROJECT_DIR$/testing/tests/test2.vert.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test3.dist.exp" afterPath="$PROJECT_DIR$/testing/tests/test3.dist.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test3.edge.exp" afterPath="$PROJECT_DIR$/testing/tests/test3.edge.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test3.in" afterPath="$PROJECT_DIR$/testing/tests/test3.in" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test3.neigh.exp" afterPath="$PROJECT_DIR$/testing/tests/test3.neigh.exp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing 3/tests/test3.vert.exp" afterPath="$PROJECT_DIR$/testing/tests/test3.vert.exp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/AdjList.class" afterPath="$PROJECT_DIR$/bin/AdjList.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaSrc/AdjList.java" afterPath="$PROJECT_DIR$/javaSrc/AdjList.java" />
     </list>
@@ -35,7 +38,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/AAassignment1$GraphTester.coverage" NAME="GraphTester Coverage Results" MODIFIED="1472026623678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AAassignment1$GraphTester.coverage" NAME="GraphTester Coverage Results" MODIFIED="1472473683680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="$PROJECT_DIR$" />
@@ -49,64 +52,50 @@
       <file leaf-file-name="AdjList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/javaSrc/AdjList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="201" column="50" selection-start-line="201" selection-start-column="50" selection-end-line="201" selection-end-column="50" />
+            <state relative-caret-position="-60">
+              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7424#7425#0" expanded="true" />
-                <element signature="e#7458#7459#0" expanded="true" />
-                <element signature="e#7482#7483#0" expanded="true" />
-                <element signature="e#7518#7519#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test3.in" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing 3/tests/test3.in">
+      <file leaf-file-name="test2.in" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testing/tests/test2.in">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="225">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test3.vert.exp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing 3/tests/test3.vert.exp">
+      <file leaf-file-name="test4.in" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testing/tests/test4.in">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="225">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="assign1TestScript.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testing/assign1TestScript.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-540">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test1-adjlist.dist.out" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javaSrc/test1-adjlist.dist.out">
+      <file leaf-file-name="facebook_combined.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testing/facebook_combined.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test1.in" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing 3/tests/test1.in">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test1.dist.exp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing 3/tests/test1.dist.exp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,7 +126,9 @@
         <option value="$PROJECT_DIR$/testing 3/tests/test3.vert.exp" />
         <option value="$PROJECT_DIR$/testing 3/tests/test1.dist.exp" />
         <option value="$PROJECT_DIR$/javaSrc/test1-adjlist.dist.out" />
+        <option value="$PROJECT_DIR$/testing/tests/test4.in" />
         <option value="$PROJECT_DIR$/javaSrc/AdjList.java" />
+        <option value="$PROJECT_DIR$/testing/tests/test2.in" />
       </list>
     </option>
   </component>
@@ -210,7 +201,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="testing 3" />
+              <option name="myItemId" value="testing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -224,25 +215,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="testing 3" />
+              <option name="myItemId" value="testing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AAassignment1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AAassignment1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javaSrc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -263,6 +240,9 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/testing 3" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/testing 3/tests" />
       <recent name="$PROJECT_DIR$" />
@@ -713,7 +693,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="GraphTester" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="adjlist" />
+      <option name="PROGRAM_PARAMETERS" value="-f $PROJECT_DIR$/testing/facebook_combined.txt adjlist" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -745,7 +725,7 @@
       <workItem from="1471235403495" duration="21964000" />
       <workItem from="1472000024021" duration="43556000" />
       <workItem from="1472281252918" duration="579000" />
-      <workItem from="1472383684845" duration="15511000" />
+      <workItem from="1472383684845" duration="28291000" />
     </task>
     <task id="LOCAL-00001" summary="almost finished">
       <created>1472025778974</created>
@@ -782,15 +762,22 @@
       <option name="project" value="LOCAL" />
       <updated>1472216141422</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adjlist complete and passes jeffreys tests">
+      <created>1472434725228</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1472434725228</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83154000" />
+    <option name="totallyTimeSpent" value="95934000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1279" height="737" extended-state="6" />
-    <editor active="true" />
+    <frame x="1" y="23" width="1279" height="737" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -800,8 +787,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32713178" sideWeight="0.50606304" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.49393696" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32713178" sideWeight="0.49393696" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32868218" sideWeight="0.49393696" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983023" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32713178" sideWeight="0.49393696" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25788197" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -816,7 +804,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983023" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -835,11 +822,12 @@
     <MESSAGE value="almost finished" />
     <MESSAGE value="Only have shortest path to implement" />
     <MESSAGE value="Implementation complete, just need to test with large data sets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementation complete, just need to test with large data sets" />
+    <MESSAGE value="Adjlist complete and passes jeffreys tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjlist complete and passes jeffreys tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -854,10 +842,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7424#7425#0" expanded="true" />
-            <element signature="e#7458#7459#0" expanded="true" />
-            <element signature="e#7482#7483#0" expanded="true" />
-            <element signature="e#7518#7519#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,10 +860,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7424#7425#0" expanded="true" />
-            <element signature="e#7458#7459#0" expanded="true" />
-            <element signature="e#7482#7483#0" expanded="true" />
-            <element signature="e#7518#7519#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -898,10 +878,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7424#7425#0" expanded="true" />
-            <element signature="e#7458#7459#0" expanded="true" />
-            <element signature="e#7482#7483#0" expanded="true" />
-            <element signature="e#7518#7519#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -920,10 +896,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7424#7425#0" expanded="true" />
-            <element signature="e#7458#7459#0" expanded="true" />
-            <element signature="e#7482#7483#0" expanded="true" />
-            <element signature="e#7518#7519#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -950,22 +922,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javaSrc/FriendshipGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaSrc/AdjMatrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test2.neigh.exp">
+    <entry file="file://$PROJECT_DIR$/testing/tests/test2.neigh.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -973,7 +930,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test3.dist.exp">
+    <entry file="file://$PROJECT_DIR$/testing/tests/test3.dist.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -981,15 +938,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/assign1TestScript.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5803">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test2.vert.exp">
+    <entry file="file://$PROJECT_DIR$/testing/tests/test2.vert.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -997,7 +946,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test2.edge.exp">
+    <entry file="file://$PROJECT_DIR$/testing/tests/test2.edge.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1005,15 +954,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test2.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test1.neigh.exp">
+    <entry file="file://$PROJECT_DIR$/testing/tests/test1.neigh.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1045,15 +986,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javaSrc/GraphTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="92" column="44" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test1.vert.exp">
+    <entry file="file://$PROJECT_DIR$/testing/tests/test1.vert.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1061,7 +994,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test1.edge.exp">
+    <entry file="file://$PROJECT_DIR$/testing/tests/test1.edge.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
@@ -1069,34 +1002,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test1.dist.exp">
+    <entry file="file://$PROJECT_DIR$/javaSrc/FriendshipGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-749">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaSrc/AdjMatrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test1.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test3.vert.exp">
+    <entry file="file://$PROJECT_DIR$/testing/tests/test3.vert.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing 3/tests/test3.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1109,16 +1034,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testing/tests/test1.dist.exp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing/tests/test1.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaSrc/GraphTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1724">
+          <caret line="92" column="44" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing/tests/test3.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing/facebook_combined.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing/assign1TestScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing/tests/test4.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing/tests/test2.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/javaSrc/AdjList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="201" column="50" selection-start-line="201" selection-start-column="50" selection-end-line="201" selection-end-column="50" />
+        <state relative-caret-position="-60">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7424#7425#0" expanded="true" />
-            <element signature="e#7458#7459#0" expanded="true" />
-            <element signature="e#7482#7483#0" expanded="true" />
-            <element signature="e#7518#7519#0" expanded="true" />
           </folding>
         </state>
       </provider>

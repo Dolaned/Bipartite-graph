@@ -2,7 +2,7 @@ import java.io.PrintWriter;
 import java.security.KeyPair;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-
+import java.io.*;
 /**
  * Adjacency list implementation for the FriendshipGraph interface.
  * <p>
@@ -15,6 +15,7 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
     public MyLinkedList[] aList;
     public HashMap<T, Integer> keyValues;
     public int adjListSize;
+    public PrintWriter writer;
 
     /**
      * Contructs empty graph.
@@ -23,6 +24,11 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
         adjListSize = 0;
         keyValues = new HashMap<>();
         aList = new MyLinkedList[1];
+	try{
+ 	   writer = new PrintWriter("resultsout.txt", "UTF-8");
+        }catch(Exception e){
+		e.printStackTrace();
+	}
     } // end of AdjList()
 
 
@@ -54,7 +60,7 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
             adjListSize++;
             long endTime = System.nanoTime();
             long durationInMs = TimeUnit.MILLISECONDS.convert((endTime - startTime), TimeUnit.NANOSECONDS);
-            System.out.println("Add vertex takes: " + durationInMs + "Ms");
+            writer.println("Add vertex takes: " + (endTime - startTime) + "ns");
         }
 
     } // end of addVertex()
@@ -78,7 +84,7 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
         }
         long endTime = System.nanoTime();
         long durationInMs = TimeUnit.MILLISECONDS.convert((endTime - startTime), TimeUnit.NANOSECONDS);
-        System.out.println("Add edge takes: " + durationInMs + "Ms");
+        writer.println("Add edge takes: " + (endTime - startTime) + " ns");
     } // end of addEdge()
 
     public ArrayList<T> neighbours(T vertLabel) {
@@ -158,7 +164,7 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
         }
         long endTime = System.nanoTime();
         long durationInMs = TimeUnit.MILLISECONDS.convert((endTime - startTime), TimeUnit.NANOSECONDS);
-        System.out.println("remove vertex takes: " + durationInMs + "Ms");
+       // System.out.println("remove vertex takes: " + durationInMs + "Ms");
 
 
     } // end of removeVertex()
@@ -178,7 +184,7 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
         }
         long endTime = System.nanoTime();
         long durationInMs = TimeUnit.MILLISECONDS.convert((endTime - startTime), TimeUnit.NANOSECONDS);
-        System.out.println("remove edge takes: " + durationInMs + "Ms");
+        //System.out.println("remove edge takes: " + durationInMs + "Ms");
     } // end of removeEdges()
 
 

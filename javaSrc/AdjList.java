@@ -208,6 +208,9 @@ public class AdjList<T extends Object> implements FriendshipGraph<T> {
 
 
     public int shortestPathDistance(T vertLabel1, T vertLabel2) {
+        if(!keyValues.containsKey(vertLabel1)  || !keyValues.containsKey(vertLabel2)){
+            throw new IllegalArgumentException("one more vertices dont exist");
+        }
         long startTime = System.nanoTime();
         ArrayDeque<KeyEntry> q = new ArrayDeque<>();
         HashMap<T, Boolean> visited = new HashMap<>();
